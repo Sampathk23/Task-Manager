@@ -1,0 +1,19 @@
+{{!-- <div class="container">
+    <form action="/task-manager/task/:id" id="form" method="post">
+    <h1>Update Task</h1>
+    <label for="task">Task</label>
+    <input type="text" name="task" id="task" value="{{task}}">
+    <button type="submit">Update Task</button>
+    </form>
+</div> --}}
+
+<div class="container">
+    <form action="/task-manager/task/{{task._id}}?_method=PUT" id="form" method="post">
+    <h1>Update Task</h1>
+    {{!-- syntax for methodoverriding --}}
+    <input type="hidden" name="_method" value="PUT"> 
+    <label for="task">Task</label>
+    <input type="text" name="task" id="task" value="{{task.task}}">
+    <button id="taskbtn" type="submit">Update Task</button>
+    </form>
+</div>
